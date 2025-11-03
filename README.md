@@ -1,6 +1,6 @@
 # SportsDataDrop MVP
 
-Monetize your sports videos - AI startups pay for your data.
+Monetize your sports videos - AI companies pay for your data.
 
 ## 🚀 Quick Start
 

@@ -1,7 +1,7 @@
 {
   "name": "sportsdatadrop",
   "version": "1.0.0",
-  "description": "Monetize your sports videos - AI startups pay for your data",
+  "description": "Monetize your sports videos - AI companies pay for your data",
   "type": "module",
   "engines": {
     "node": ">=20.0.0"

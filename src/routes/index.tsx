@@ -9,7 +9,7 @@ export default function Home() {
           Monetize Your Sports Videos
         </h1>
         <p class="text-xl md:text-2xl mb-8 opacity-80 max-w-2xl mx-auto">
-          Upload your training or match footage. AI startups pay for your data.
+          Upload your training or match footage. AI companies pay for your data.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <A 

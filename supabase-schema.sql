@@ -32,7 +32,7 @@ CREATE POLICY "Public read access" ON videos
 FOR SELECT
 USING (true);
 
--- Policy to allow authenticated users to insert videos
-CREATE POLICY "Authenticated insert" ON videos
+-- Policy to allow anyone to insert videos (for public uploads)
+CREATE POLICY "Public insert access" ON videos
 FOR INSERT
-WITH CHECK (auth.role() = 'authenticated');
+WITH CHECK (true);
