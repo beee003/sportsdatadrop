@@ -36,9 +36,12 @@ END $$;
 -- ============================================
 -- STEP 4: Create public insert policy
 -- ============================================
+-- NOTE: Videos table doesn't have bucket_id column
+-- Use WITH CHECK (true) to allow all inserts
 
 CREATE POLICY "Public insert access" ON videos
 FOR INSERT
+TO public
 WITH CHECK (true);
 
 -- ============================================
