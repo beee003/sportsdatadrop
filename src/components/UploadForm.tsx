@@ -41,7 +41,8 @@ export default function UploadForm() {
         });
 
       if (uploadError) {
-        setError(uploadError.message);
+        console.error("Storage upload error:", uploadError);
+        setError(`Upload failed: ${uploadError.message}. Check browser console for details.`);
         setLoading(false);
         return;
       }
@@ -51,20 +52,40 @@ export default function UploadForm() {
         .from("videos")
         .getPublicUrl(uploadData.path);
 
+      console.log("File uploaded successfully:", uploadData.path);
+      console.log("Public URL:", urlData.publicUrl);
+
       // Insert metadata into database
-      const { error: dbError } = await supabase.from("videos").insert({
+      const videoData = {
         title: title(),
         price: parseFloat(price()),
         file_url: uploadData.path,
         public_url: urlData.publicUrl,
         created_at: new Date().toISOString(),
-      });
+      };
+
+      console.log("Inserting video data:", videoData);
+      const { error: dbError, data: dbData } = await supabase
+        .from("videos")
+        .insert(videoData)
+        .select();
 
       if (dbError) {
-        setError(dbError.message);
+        console.error("Database insert error:", dbError);
+        console.error("Error details:", JSON.stringify(dbError, null, 2));
+        let errorMsg = dbError.message;
+        
+        // Provide helpful error messages
+        if (dbError.message.includes("row-level security") || dbError.message.includes("RLS")) {
+          errorMsg = `Database permission error: ${dbError.message}. Please run the SQL fix script in your Supabase dashboard (see fix-rls-complete.sql)`;
+        }
+        
+        setError(errorMsg);
         setLoading(false);
         return;
       }
+
+      console.log("Video inserted successfully:", dbData);
 
       setSuccess(true);
       setFile(null);
@@ -76,7 +97,8 @@ export default function UploadForm() {
         setSuccess(false);
       }, 3000);
     } catch (err: any) {
-      setError(err.message || "An unexpected error occurred");
+      console.error("Unexpected error:", err);
+      setError(err.message || "An unexpected error occurred. Check browser console for details.");
     } finally {
       setLoading(false);
     }
