@@ -21,18 +21,22 @@ Vercel will auto-detect SolidStart settings:
 **You can leave these as-is!**
 
 ## Step 4: Add Environment Variables
-Click **"Environment Variables"** and add these three:
+Click **"Environment Variables"** and add these **four** variables:
 
-1. **VITE_SUPABASE_URL**
+1. **ENABLE_VC_BUILD** ⚠️ **REQUIRED**
+   - Value: `1`
+   - This enables the Vercel Build Output API (required for SolidStart)
+
+2. **VITE_SUPABASE_URL**
    - Value: Your Supabase project URL (from your `.env` file)
 
-2. **VITE_SUPABASE_ANON_KEY**
+3. **VITE_SUPABASE_ANON_KEY**
    - Value: Your Supabase anon key (from your `.env` file)
 
-3. **STRIPE_PUBLIC_KEY** (Optional)
+4. **STRIPE_PUBLIC_KEY** (Optional)
    - Value: Your Stripe public key (from your `.env` file)
 
-You can copy these from your local `.env` file.
+**Important:** Set `ENABLE_VC_BUILD=1` for all environments (Production, Preview, Development).
 
 ## Step 5: Deploy!
 1. Click **"Deploy"**
