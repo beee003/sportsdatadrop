@@ -73,11 +73,20 @@ export default function UploadForm() {
       if (dbError) {
         console.error("Database insert error:", dbError);
         console.error("Error details:", JSON.stringify(dbError, null, 2));
+        console.error("Error code:", dbError.code);
+        console.error("Error hint:", dbError.hint);
+        
         let errorMsg = dbError.message;
         
         // Provide helpful error messages
-        if (dbError.message.includes("row-level security") || dbError.message.includes("RLS")) {
-          errorMsg = `Database permission error: ${dbError.message}. Please run the SQL fix script in your Supabase dashboard (see fix-rls-complete.sql)`;
+        if (dbError.message.includes("row-level security") || dbError.message.includes("RLS") || dbError.code === "42501") {
+          errorMsg = `❌ RLS Policy Error: ${dbError.message}\n\n` +
+            `To fix this:\n` +
+            `1. Go to Supabase Dashboard → SQL Editor\n` +
+            `2. Copy and paste the ENTIRE file: FIX_RLS_SIMPLE.sql\n` +
+            `3. Click Run\n` +
+            `4. Verify policies were created (run VERIFY_POLICIES.sql)\n` +
+            `5. Try uploading again`;
         }
         
         setError(errorMsg);
