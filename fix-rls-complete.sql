@@ -42,32 +42,26 @@ FOR INSERT
 WITH CHECK (true);
 
 -- ============================================
--- STEP 3: Create new public policies for storage bucket
+-- STEP 3: Storage policies (must be done via Dashboard)
 -- ============================================
-
--- Ensure RLS is enabled on storage.objects
-ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY;
-
--- Create public read policy for storage (if it doesn't exist)
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_policies 
-    WHERE schemaname = 'storage' 
-    AND tablename = 'objects' 
-    AND policyname = 'Public read access'
-    AND qual::text LIKE '%videos%'
-  ) THEN
-    CREATE POLICY "Public read access" ON storage.objects
-    FOR SELECT
-    USING (bucket_id = 'videos');
-  END IF;
-END $$;
-
--- Create public upload policy for storage
-CREATE POLICY "Public upload videos" ON storage.objects
-FOR INSERT
-WITH CHECK (bucket_id = 'videos');
+-- NOTE: Storage policies cannot be modified via SQL due to permissions.
+-- You must set them up in the Supabase Dashboard:
+--
+-- 1. Go to Storage → Policies
+-- 2. Select the "videos" bucket
+-- 3. Create these policies:
+--
+--    Policy 1: "Public read access"
+--    - Operation: SELECT
+--    - Target roles: anon, authenticated
+--    - USING expression: bucket_id = 'videos'
+--
+--    Policy 2: "Public upload videos"  
+--    - Operation: INSERT
+--    - Target roles: anon, authenticated
+--    - WITH CHECK expression: bucket_id = 'videos'
+--
+-- See STORAGE_POLICY_SETUP.md for detailed UI instructions.
 
 -- ============================================
 -- STEP 4: Verify the policies were created
