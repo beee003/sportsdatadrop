@@ -1,0 +1,53 @@
+# Athera AI - Project Rules for Cursor AI
+
+## Project Overview
+Athera AI is a privacy-first sports data marketplace connecting athletes/creators with AI companies. Built with SolidStart (frontend) and FastAPI (backend).
+
+## Tech Stack
+- **Frontend**: SolidStart + SolidJS + Tailwind CSS + TypeScript
+- **Backend**: FastAPI (Python) + Celery workers
+- **Database**: Supabase (PostgreSQL)
+- **Storage**: Supabase Storage → S3
+- **Payments**: Stripe Connect
+- **Deployment**: Vercel (web) + Fly.io/Railway (API)
+
+## Code Style
+- **TypeScript**: Strict mode, prefer explicit types
+- **React Patterns**: Use SolidJS reactivity (signals, createResource)
+- **File Naming**: kebab-case for files, PascalCase for components
+- **Imports**: Use path aliases (`~/` for src/, `@/` for components/ui/)
+- **Components**: Functional components with TypeScript interfaces
+
+## Architecture Patterns
+- **Frontend Routes**: File-based routing in `src/routes/`
+- **Components**: Reusable in `src/components/`, UI primitives in `src/components/ui/`
+- **API**: RESTful endpoints in FastAPI, async functions
+- **State**: SolidJS signals for local state, Supabase for server state
+- **Styling**: Tailwind utility classes, custom classes in `globals.css`
+
+## Key Features
+1. Video upload with privacy consent
+2. Automated video processing (standardization, anonymization, pose extraction)
+3. Marketplace for AI companies to purchase datasets
+4. Stripe Connect for payouts to creators
+5. Admin dashboard for approval workflows
+
+## Database Schema
+- `users` table (Supabase Auth)
+- `videos` table (uploads, metadata)
+- `datasets` table (processed, anonymized videos)
+- `purchases` table (transactions)
+- `consent_logs` table (privacy compliance)
+
+## Security
+- Row-Level Security (RLS) enabled on all tables
+- Public upload policies for videos
+- Signed URLs for secure video access
+- Stripe webhook signature verification
+
+## Design System
+- Colors: accent `#00FF7F`, background `#0D0D0D`, text `#EAEAEA`
+- Glassmorphism effects: `bg-white/5 backdrop-blur-lg`
+- Typography: Inter font family
+- Animations: Framer Motion or CSS transitions
+

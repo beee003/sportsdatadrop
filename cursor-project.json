@@ -1,0 +1,61 @@
+{
+  "name": "Athera AI",
+  "description": "Privacy-first sports data marketplace for AI companies",
+  "type": "monorepo",
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/*"
+  ],
+  "techStack": {
+    "frontend": {
+      "framework": "SolidStart",
+      "language": "TypeScript",
+      "styling": "Tailwind CSS",
+      "ui": "shadcn/ui"
+    },
+    "backend": {
+      "framework": "FastAPI",
+      "language": "Python",
+      "workers": "Celery"
+    },
+    "database": "Supabase (PostgreSQL)",
+    "storage": "Supabase Storage",
+    "payments": "Stripe Connect",
+    "deployment": {
+      "frontend": "Vercel",
+      "backend": "Fly.io / Railway"
+    }
+  },
+  "features": [
+    "Video upload with consent",
+    "Automated video processing",
+    "Privacy preservation (face/jersey blur)",
+    "Pose keypoint extraction",
+    "Dataset marketplace",
+    "Stripe Connect payouts",
+    "Admin approval workflow"
+  ],
+  "architecture": {
+    "pattern": "Two-sided marketplace",
+    "frontend": "File-based routing (SolidStart)",
+    "backend": "RESTful API (FastAPI)",
+    "workers": "Async processing with Celery"
+  },
+  "design": {
+    "theme": "Dark glassmorphism",
+    "colors": {
+      "accent": "#00FF7F",
+      "background": "#0D0D0D",
+      "text": "#EAEAEA"
+    }
+  },
+  "currentPhase": "MVP - Basic upload & marketplace",
+  "nextSteps": [
+    "Video processing pipeline",
+    "Privacy anonymization",
+    "Pose extraction",
+    "Admin dashboard"
+  ]
+}
+

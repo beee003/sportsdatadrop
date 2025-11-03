@@ -1,6 +1,8 @@
-# SportsDataDrop MVP
+# Athera AI - Privacy-First Sports Data Marketplace
 
-Monetize your sports videos - AI companies pay for your data.
+**Tagline**: "Standardize, anonymize, and monetize sports performance videos for AI training."
+
+A two-sided marketplace connecting athletes/creators with AI companies. Upload raw sports videos → automatic standardization & privacy preservation → datasets available for purchase.
 
 ## 🚀 Quick Start
 
