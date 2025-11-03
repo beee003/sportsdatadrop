@@ -10,6 +10,7 @@ export default {
         accent: "#00FF7F",
         background: "#0d0d0d",
         text: "#EAEAEA",
+        border: "rgba(255, 255, 255, 0.1)",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
