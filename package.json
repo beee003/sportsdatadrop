@@ -1,0 +1,31 @@
+{
+  "name": "sportsdatadrop",
+  "version": "1.0.0",
+  "description": "Monetize your sports videos - AI startups pay for your data",
+  "type": "module",
+  "scripts": {
+    "dev": "solid-start dev",
+    "build": "solid-start build",
+    "start": "solid-start start",
+    "preview": "solid-start preview",
+    "pull-secrets": "vercel env pull .env.local"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.8.2",
+    "@supabase/supabase-js": "^2.39.0",
+    "solid-js": "^1.8.0",
+    "solid-start": "^0.3.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "autoprefixer": "^10.4.16",
+    "lucide-solid": "^0.292.0",
+    "postcss": "^8.4.32",
+    "solid-start-node": "^0.3.11",
+    "solid-start-vercel": "^0.3.11",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "vite": "^4.4.6",
+    "vite-plugin-solid": "^2.8.1"
+  }
+}

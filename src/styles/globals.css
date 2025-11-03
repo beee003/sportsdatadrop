@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text font-sans antialiased;
+    background-color: #0d0d0d;
+    color: #EAEAEA;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-md bg-white/5 border-b border-white/10;
+  }
+
+  .neon-green {
+    @apply text-accent;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.5);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.3);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
