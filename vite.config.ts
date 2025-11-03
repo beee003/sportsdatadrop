@@ -7,14 +7,8 @@ export default defineConfig({
   plugins: [
     solid({
       adapter: vercel(),
-      ssr: {
-        noExternal: ["@supabase/supabase-js"],
-      },
     }),
   ],
-  ssr: {
-    noExternal: ["@supabase/supabase-js"],
-  },
   resolve: {
     alias: {
       "~": fileURLToPath(new URL("./src", import.meta.url)),
