@@ -3,6 +3,5 @@
   "outputDirectory": ".output",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "solidstart",
-  "nodeVersion": "20.x"
+  "framework": "solidstart"
 }

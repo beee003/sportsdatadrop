@@ -38,6 +38,8 @@ Click **"Environment Variables"** and add these **four** variables:
 
 **Important:** Set `ENABLE_VC_BUILD=1` for all environments (Production, Preview, Development).
 
+**Note:** To use Node.js 20.x instead of the default, go to **Settings** → **General** → **Node.js Version** and select `20.x`.
+
 ## Step 5: Deploy!
 1. Click **"Deploy"**
 2. Wait 2-3 minutes for the build to complete
