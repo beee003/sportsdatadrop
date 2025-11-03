@@ -4,11 +4,12 @@
   "description": "Monetize your sports videos - AI startups pay for your data",
   "type": "module",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "dev": "solid-start dev",
-    "build": "solid-start build",
+    "build": "solid-start build && npm run fix-runtime",
+    "fix-runtime": "node scripts/fix-runtime.js",
     "start": "solid-start start",
     "preview": "solid-start preview",
     "pull-secrets": "vercel env pull .env.local"

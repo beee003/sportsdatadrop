@@ -1,0 +1,152 @@
+{
+  "/*404": {
+    "type": "route",
+    "script": {
+      "type": "script",
+      "href": "/assets/_...404_-852e95fa.js"
+    },
+    "assets": [
+      {
+        "type": "script",
+        "href": "/assets/_...404_-852e95fa.js"
+      },
+      {
+        "type": "script",
+        "href": "/assets/entry-client-c12fab86.js"
+      },
+      {
+        "type": "style",
+        "href": "/assets/entry-client-df210ac2.css"
+      }
+    ]
+  },
+  "/": {
+    "type": "route",
+    "script": {
+      "type": "script",
+      "href": "/assets/index-27551359.js"
+    },
+    "assets": [
+      {
+        "type": "script",
+        "href": "/assets/index-27551359.js"
+      },
+      {
+        "type": "script",
+        "href": "/assets/entry-client-c12fab86.js"
+      },
+      {
+        "type": "style",
+        "href": "/assets/entry-client-df210ac2.css"
+      },
+      {
+        "type": "script",
+        "href": "/assets/Icon-05c57c7a.js"
+      }
+    ]
+  },
+  "/marketplace": {
+    "type": "route",
+    "script": {
+      "type": "script",
+      "href": "/assets/marketplace-c5fcace2.js"
+    },
+    "assets": [
+      {
+        "type": "script",
+        "href": "/assets/marketplace-c5fcace2.js"
+      },
+      {
+        "type": "script",
+        "href": "/assets/entry-client-c12fab86.js"
+      },
+      {
+        "type": "style",
+        "href": "/assets/entry-client-df210ac2.css"
+      },
+      {
+        "type": "script",
+        "href": "/assets/supabase-5ac2a229.js"
+      },
+      {
+        "type": "script",
+        "href": "/assets/Icon-05c57c7a.js"
+      }
+    ]
+  },
+  "/success": {
+    "type": "route",
+    "script": {
+      "type": "script",
+      "href": "/assets/success-045cbaf4.js"
+    },
+    "assets": [
+      {
+        "type": "script",
+        "href": "/assets/success-045cbaf4.js"
+      },
+      {
+        "type": "script",
+        "href": "/assets/entry-client-c12fab86.js"
+      },
+      {
+        "type": "style",
+        "href": "/assets/entry-client-df210ac2.css"
+      },
+      {
+        "type": "script",
+        "href": "/assets/Icon-05c57c7a.js"
+      }
+    ]
+  },
+  "/upload": {
+    "type": "route",
+    "script": {
+      "type": "script",
+      "href": "/assets/upload-cdf46ecd.js"
+    },
+    "assets": [
+      {
+        "type": "script",
+        "href": "/assets/upload-cdf46ecd.js"
+      },
+      {
+        "type": "script",
+        "href": "/assets/entry-client-c12fab86.js"
+      },
+      {
+        "type": "style",
+        "href": "/assets/entry-client-df210ac2.css"
+      },
+      {
+        "type": "script",
+        "href": "/assets/supabase-5ac2a229.js"
+      },
+      {
+        "type": "script",
+        "href": "/assets/Icon-05c57c7a.js"
+      }
+    ]
+  },
+  "entry-client": {
+    "type": "entry",
+    "script": {
+      "type": "script",
+      "href": "/assets/entry-client-c12fab86.js"
+    },
+    "assets": [
+      {
+        "type": "script",
+        "href": "/assets/entry-client-c12fab86.js"
+      },
+      {
+        "type": "style",
+        "href": "/assets/entry-client-df210ac2.css"
+      }
+    ]
+  },
+  "index.html": {
+    "type": "entry",
+    "assets": []
+  }
+}

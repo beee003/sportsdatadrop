@@ -6,7 +6,9 @@ import { fileURLToPath, URL } from "node:url";
 export default defineConfig({
   plugins: [
     solid({
-      adapter: vercel(),
+      adapter: vercel({
+        edge: false,
+      }),
     }),
   ],
   ssr: {
