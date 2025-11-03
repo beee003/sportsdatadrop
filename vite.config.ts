@@ -9,6 +9,9 @@ export default defineConfig({
       adapter: vercel(),
     }),
   ],
+  ssr: {
+    noExternal: ["solid-start", "@solidjs/router"],
+  },
   resolve: {
     alias: {
       "~": fileURLToPath(new URL("./src", import.meta.url)),
