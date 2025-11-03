@@ -19,10 +19,10 @@ CREATE POLICY "Public read access" ON storage.objects
 FOR SELECT
 USING (bucket_id = 'videos');
 
--- Create storage policy for authenticated upload
-CREATE POLICY "Authenticated upload" ON storage.objects
+-- Create storage policy for public upload (allows anyone to upload to videos bucket)
+CREATE POLICY "Public upload videos" ON storage.objects
 FOR INSERT
-WITH CHECK (bucket_id = 'videos' AND auth.role() = 'authenticated');
+WITH CHECK (bucket_id = 'videos');
 
 -- Enable Row Level Security (optional, adjust based on your needs)
 ALTER TABLE videos ENABLE ROW LEVEL SECURITY;
