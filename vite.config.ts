@@ -12,6 +12,9 @@ export default defineConfig({
       },
     }),
   ],
+  ssr: {
+    noExternal: ["@supabase/supabase-js"],
+  },
   resolve: {
     alias: {
       "~": fileURLToPath(new URL("./src", import.meta.url)),
